@@ -12,6 +12,14 @@ import {
   View
 } from 'react-native';
 
+class Raven extends Component{
+  render(){
+    <Image
+      source = {require("raven.svg")}
+    />
+  }
+}
+
 class Roost extends Component {
 
   constructor(props){
@@ -23,9 +31,15 @@ class Roost extends Component {
   }
 
   render() {
+
+    var ravens = [];
+    for(var i = 0; i < this.state.ravens; i++){
+      ravens.push(<Raven />);
+    }
+
     return (
       <View>
-        <Raven></Raven>
+        {ravens}
         <Text>The Roost</Text>
       </View>
       
